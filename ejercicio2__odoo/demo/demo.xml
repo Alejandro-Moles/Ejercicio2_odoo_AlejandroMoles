@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+          <record id="object0" model="ejercicio2__odoo.coche">
+            <field name="Codigo">123123</field>
+            <field name="modelo">Ford</field>
+            <field name="color">Negro</field>
+          </record>
+
+        <record id="object1" model="ejercicio2__odoo.coche">
+            <field name="Codigo">123123</field>
+            <field name="modelo">Ford</field>
+            <field name="color">Negro</field>
+          </record>
+
+        <record id="object2" model="ejercicio2__odoo.coche">
+            <field name="Codigo">123123</field>
+            <field name="modelo">Ford</field>
+            <field name="color">Negro</field>
+          </record>
+
+    </data> 
+</odoo>

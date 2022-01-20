@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <odoo>
+        <data>
+            <!-- Definimos una categoría de seguridad para módulo-->
+            <record model="ir.module.category" id="ejercicio2__odoo.module_category_coche">
+                <field name="name">Coche</field>
+                <field name="description">Ayuda a gestionar personas</field>
+                <field name="sequence">100</field>
+            </record>
+
+            <record model="res.groups" id="group_coche_user">
+                <field name="name">user</field>
+                <field name="category_id" ref="ejercicio2__odoo.module_category_coche"></field>
+                <field name="comment"> users solo pueden leer</field>
+            </record>
+
+            <record model="res.groups" id="group_coche_adminis">
+                <field name="name">Administrador</field>
+                <field name="category_id" ref="ejercicio2__odoo.module_category_coche"></field>
+                <field name="comment"> Administrador pueden leer y escribir</field>
+                <!-- tambien pertenecen al grupo user, mirar documentación ORM-->
+                <field name="implied_ids" eval="[(4, ref('group_coche_user'))]"/>
+                 <!--Añadimos a los users administradores de odoo -->
+                <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]" />
+            </record>
+        </data>
+    </odoo>

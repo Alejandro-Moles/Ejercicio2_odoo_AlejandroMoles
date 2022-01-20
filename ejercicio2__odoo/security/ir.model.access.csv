@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ejercicio2__odoo_coche_user,ejercicio2__odoo.coche.user,model_ejercicio2__odoo_coche,ejercicio2__odoo.group_coche_user,1,0,0,0
+access_ejercicio2__odoo_coche_admin,ejercicio2__odoo.coche.admin,model_ejercicio2__odoo_coche,ejercicio2__odoo.group_coche_adminis,1,1,1,1
+
+
+access_ejercicio2__odoo_cliente_usuario,ejercicio2__odoo.cliente.usuario,model_ejercicio2__odoo_cliente,ejercicio2__odoo.group_cliente_usuario,1,0,0,0
+access_ejercicio2__odoo_cliente_administrador,ejercicio2__odoo.cliente.administrador,model_ejercicio2__odoo_cliente,ejercicio2__odoo.group_cliente_administrador,1,1,1,1
+
+
+access_ejercicio2__odoo_pedido_usuario,ejercicio2__odoo.pedido.usuario,model_ejercicio2__odoo_pedido,ejercicio2__odoo.group_pedido_user,1,0,0,0
+access_ejercicio2__odoo_pedido_administrador,ejercicio2__odoo.pedido.administrador,model_ejercicio2__odoo_pedido,ejercicio2__odoo.group_pedido_adminis,1,1,1,1

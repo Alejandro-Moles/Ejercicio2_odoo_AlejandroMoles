@@ -1,0 +1,233 @@
+<odoo>
+  <data>
+
+    <!--PRIMERA VISAT VISTA DEL COCHE-->
+    <!-- Vistas de coche-->
+
+    <record model="ir.ui.view" id="ejercicio2__odoo.coche_list_view">
+      <field name="name">ejercicio2__odoo.coche.view.tree</field>
+      <field name="model">ejercicio2__odoo.coche</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Codigo"/>
+          <field name="modelo"/>
+          <field name="color"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- search -->
+
+    <record model="ir.ui.view" id="ejercicio2__odoo.coche_search_view">
+      <field name="name">ejercicio2__odoo.coche.view.search</field>
+      <field name="model">ejercicio2__odoo.coche</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="Codigo"/>
+          <field name="modelo"/>
+          <field name="color"/>
+          <group>
+            <filter name="group_by_modelo" string="modelo" context="{'gropup_by':'modelo'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    <record model="ir.ui.view" id="ejercicio2__odoo.coche_form_view">
+      <field name="name">ejercicio2__odoo.coche.view.form</field>
+      <field name="model">ejercicio2__odoo.coche</field>
+      <field name="arch" type="xml">
+        <form string="Información Coche">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Codigo <field name="Codigo" placeholder="Codigo"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="modelo" placeholder="Modelo"/>
+                <field name="color"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="ejercicio2__odoo.coche_action_window">
+      <field name="name">Coches</field>
+      <field name="res_model">ejercicio2__odoo.coche</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="ejercicio2__odoo" id="ejercicio2__odoo.menu_root"/>
+    <menuitem name="Coches" id="ejercicio2__odoo.menu_coche" parent="ejercicio2__odoo.menu_root"/>
+    <menuitem name="List" id="ejercicio2__odoo.menu_coche_list" parent="ejercicio2__odoo.menu_coche"
+              action="ejercicio2__odoo.coche_action_window"/>
+
+
+
+
+    <!-- SEGUNDA VISTA, VISTA DEL CLIENTE-->
+
+    <record model="ir.ui.view" id="ejercicio2__odoo.cliente_list_view">
+      <field name="name">ejercicio2__odoo.cliente.view.tree</field>
+      <field name="model">ejercicio2__odoo.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Dni"/>
+          <field name="nombre"/>
+          <field name="fecha_nacimiento"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- search -->
+
+    <record model="ir.ui.view" id="ejercicio2__odoo.cliente_search_view">
+      <field name="name">ejercicio2__odoo.cliente.view.search</field>
+      <field name="model">ejercicio2__odoo.cliente</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="Dni"/>
+          <field name="nombre"/>
+          <field name="fecha_nacimiento"/>
+          <group>
+            <filter name="group_by_modelo" string="modelo" context="{'gropup_by':'modelo'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+ <!-- form -->
+    
+    <record model="ir.ui.view" id="ejercicio2__odoo.cliente_form_view">
+      <field name="name">ejercicio2__odoo.cliente.view.form</field>
+      <field name="model">ejercicio2__odoo.cliente</field>
+      <field name="arch" type="xml">
+        <form string="Información cliente">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Dni <field name="Dni" placeholder="Dni"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="Nombre"/>
+                <field name="fecha_nacimiento"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="ejercicio2__odoo.cliente_action_window">
+      <field name="name">clientes</field>
+      <field name="res_model">ejercicio2__odoo.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="ejercicio2__odoo" id="ejercicio2__odoo.menu_root"/>
+    <menuitem name="clientes" id="ejercicio2__odoo.menu_cliente" parent="ejercicio2__odoo.menu_root"/>
+    <menuitem name="List" id="ejercicio2__odoo.menu_cliente_list" parent="ejercicio2__odoo.menu_cliente"
+              action="ejercicio2__odoo.cliente_action_window"/>
+
+
+
+
+
+
+    
+
+  <!--TERCERA VISTA, VISTA DEL PEDIDO-->
+  <!-- Vistas de pedido-->
+
+    <record model="ir.ui.view" id="ejercicio2__odoo.pedido_list_view">
+      <field name="name">ejercicio2__odoo.pedido.view.tree</field>
+      <field name="model">ejercicio2__odoo.pedido</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Codigo"/>
+          <field name="coche"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="ejercicio2__odoo.pedido_search_view">
+      <field name="name">ejercicio2__odoo.pedido.view.search</field>
+      <field name="model">ejercicio2__odoo.pedido</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="Codigo"/>
+          <field name="coche"/>
+         
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="ejercicio2__odoo.pedido_form_view">
+      <field name="name">ejercicio2__odoo.pedido.view.form</field>
+      <field name="model">ejercicio2__odoo.pedido</field>
+      <field name="arch" type="xml">
+        <form string="Información pedido">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Codigo del Pedido <field name="Codigo" placeholder="Codigo"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="coche" placeholder="coche"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+    <!-- Definición de menús-->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="ejercicio2__odoo.pedido_action_window">
+      <field name="name">pedidos</field>
+      <field name="res_model">ejercicio2__odoo.pedido</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="ejercicio2__odoo" id="ejercicio2__odoo.menu_root"/>
+    <menuitem name="pedidos" id="ejercicio2__odoo.menu_pedido" parent="ejercicio2__odoo.menu_root"/>
+    <menuitem name="List" id="ejercicio2__odoo.menu_pedido_list" parent="ejercicio2__odoo.menu_pedido"
+              action="ejercicio2__odoo.pedido_action_window"/>
+  </data>
+</odoo>
+

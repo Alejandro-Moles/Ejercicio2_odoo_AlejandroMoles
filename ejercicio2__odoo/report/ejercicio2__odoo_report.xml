@@ -1,0 +1,90 @@
+<odoo>
+    <record id="ejercicio2__odoo.coche_report" model="ir.actions.report">
+        <field name="name"> Informe de coches</field>
+        <field name="model">ejercicio2__odoo.coche</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ejercicio2__odoo.coche_report_view</field>
+        <field name="report_file">ejercicio2__odoo.coche_report</field>
+        <field name="binding_model_id" ref="model_ejercicio2__odoo_coche"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="coche_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>coches </h1><br />
+                <t t-foreach="docs" t-as="coche">
+                    <ul>
+                        <li>    Codigo del coche<span t-field="coche.Codigo" /></li>
+                        <li>    Modelo del coche <span t-field="coche.modelo" /></li>
+                        <li>    Color del coche <span t-field="coche.color" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+     <record id="ejercicio2__odoo.cliente_report" model="ir.actions.report">
+        <field name="name"> Informe de Clientes</field>
+        <field name="model">ejercicio2__odoo.cliente</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ejercicio2__odoo.cliente_report_view</field>
+        <field name="report_file">ejercicio2__odoo.cliente_report</field>
+        <field name="binding_model_id" ref="model_ejercicio2__odoo_cliente"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="cliente_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Clientes </h1><br />
+                <t t-foreach="docs" t-as="cliente">
+                    <ul>
+                        <li>    Dni del cliente<span t-field="cliente.Dni" /></li>
+                        <li>    Nombre del cliente <span t-field="cliente.nombre" /></li>
+                        <li>    Fecha nacimiento del cliente <span t-field="cliente.fecha_nacimiento" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+
+
+    <record id="ejercicio2__odoo.pedido_report" model="ir.actions.report">
+        <field name="name"> Informe de pedidos</field>
+        <field name="model">ejercicio2__odoo.pedido</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ejercicio2__odoo.pedido_report_view</field>
+        <field name="report_file">ejercicio2__odoo.pedido_report</field>
+        <field name="binding_model_id" ref="model_ejercicio2__odoo_pedido"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="pedido_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>pedidos </h1><br />
+                <t t-foreach="docs" t-as="pedido">
+                    <ul>
+                        <li>    Codigo <span t-field="pedido.Codigo" /></li>
+                        <li>    coche <span t-field="pedido.coche" /></li>
+                        
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
